@@ -1,5 +1,6 @@
 class AnimalsController < ApplicationController
   before_action :set_animal, only: [:show, :edit, :update, :destroy]
+  before_action :set_kind
 
   # GET /animals
   # GET /animals.json
@@ -65,6 +66,10 @@ class AnimalsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_animal
       @animal = Animal.find(params[:id])
+    end
+
+    def set_kind
+      @kinds = Kind.all.to_a
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

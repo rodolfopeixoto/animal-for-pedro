@@ -16,6 +16,14 @@
     <%= form.number_field :height %>
   </div>
 
+  <div class="form-group">
+    <%= form.label :kind %>
+      <%= form.collection_select :kind, @kinds, :id, :name %>
+  </div>
+ 
+
+
+
   <div class="field">
     <%= form.label :mass %>
     <%= form.number_field :mass %>
